@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Technical Documentation Page</title>
+  </head>
+  <body>
+      <main id="main-doc">
+  <nav id="navbar">
+    <header id="nav-header">
+      CSS Documentation
+    </header>
+    <ul class="nav-ul">
+      <li class="nav-li"><a href="#Introduction" class="nav-link">Introduction</a></li>
+      <li class="nav-li"><a href="#What_You_Should_Already_Know" class="nav-link">What You Should Already Know</a></li>
+      <li class="nav-li"><a href="#Basics" class="nav-link">Basics</a></li>
+      <li class="nav-li"><a href="#Applying_CSS" class="nav-link">Applying CSS</a></li>
+      <li class="nav-li"><a href="#Dissecting_CSS_Code" class="nav-link">Dissecting CSS Code</a></li>
+      <li class="nav-li"><a href="#Other_Syntax_Considerations" class="nav-link">Other Syntax Considerations</a></li>
+      <li class="nav-li"><a href="#Next_Steps" class="nav-link">Next Steps</a></li>
+
+  </nav>
+  <section class="main-section" id="Introduction">
+    <header>
+      Introduction
+    </header>
+    <p>
+      Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. CSS (Cascading Style Sheets) is the code that styles web content.
+    </p>
+  </section>
+  <section class="main-section" id="What_You_Should_Already_Know">
+    <header>
+      What You Should Already Know
+    </header>
+    <p>
+      This guide assumes you have basic knowledge and understanding of the following:
+    <ul class="body-ul">
+      <li class="body-li">A general understanding of the Internet and the World Wide Web (WWW).</li>
+      <li class="body-li">Good working knowledge of HyperText Markup Language (HTML).</li>
+    </ul>
+    </p>
+  </section>
+  <section class="main-section" id="Basics">
+    <header>
+      Basics
+    </header>
+    <p>
+      CSS is among the core languages of the open web and is standardized across Web browsers. It is the code that styles web content. Like HTML, CSS is not a programming language. It's not a markup language either. CSS is a style sheet language. CSS is what you use to selectively style HTML elements. For example, this CSS selects paragraph text, setting the color to red:
+    </p>
+    <pre><code>p {
+  color: red;
+}</code></pre>
+  </section>
+  <section class="main-section" id="Applying_CSS">
+    <header>Applying CSS</header>
+    <p>
+      To make the code work, we need to apply the CSS to the HTML document. Otherwise, the styling won't change the appearance of the HTML. There are two ways to apply CSS, both requiring code to be placed in the &lt;head&gt; element of the HTML document (i.e. between the &lt;head&gt; and &lt;/head&gt; tags):
+    <ol>
+      <li>Apply CSS directly in the &lt;head&gt; element of the HTML document
+        <pre><code>&lt;style&gt;
+  p {
+  color: red;
+  }
+&lt;/style&gt;</code></pre>
+      </li>
+      <li>Export the CSS to a new document and link the file as a stylesheet
+        <pre><code>&lt;link href="style.css" rel="stylesheet"&gt;</code></pre>
+      </li>
+  </section>
+  <section class="main-section" id="Dissecting_CSS_Code">
+    <header>
+      Dissecting CSS Code
+    </header>
+    <p>
+      Let's dissect the CSS code for red paragraph text to understand how it works:
+    </p>
+    <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/css-declaration-small.png" id="css-code" alt="image of css code">
+    <p>
+      The whole structure is called a ruleset. (The term ruleset is often referred to as just <em>rule</em>.) Note the names of the individual parts:
+    </p>
+    <ul class="body-ul">
+      <li class="body-li"><b>Selector</b>
+        <div>This is the HTML element name at the start of the ruleset. It defines the element(s) to be styled (in this example, &lt;p&gt; elements).
+        </div>
+      </li>
+      <li class="body-li"><b>Declaration</b>
+        <div>This is a single rule like <span class="inline-code">color: red;</span>. It specifies which of the element's properties you want to style.
+        </div>
+      </li>
+      <li class="body-li"><b>Properties</b>
+        <div>These are ways in which you can style an HTML element. (In this example, color is a property of the <span class="inline-code">&lt;p&gt;</span> elements.) In CSS, you choose which properties you want to affect in the rule.
+        </div>
+      </li>
+      <li class="body-li"><b>Property value</b>
+        <div>To the right of the property—after the colon—there is the <b>property value</b>. This chooses one out of many possible appearances for a given property. (For example, there are many <span class="inline-code">color</span> values in addition to <span class="inline-code">red</span>.)
+        </div>
+      </li>
+  </section>
+  <section class="main-section" id="Other_Syntax_Considerations">
+    <header>
+      Other Syntax Considerations
+    </header>
+    <p>Note the other important parts of the syntax:</p>
+    <ul class="body-ul">
+      <li class="body-li">
+        Apart from the selector, each ruleset must be wrapped in curly braces. (<span class="inline-code">{}</span>)
+      </li>
+      <li class="body-li">
+        Within each declaration, you must use a colon (<span class="inline-code">:</span>) to separate the property from its value or values.
+      </li>
+      <li class="body-li">
+        Within each ruleset, you must use a semicolon (<span class="inline-code">;</span>) to separate each declaration from the next one.
+      </li>
+    </ul>
+    <p> To modify multiple property values in one ruleset, write them separated by semicolons, like this: </p>
+    <pre><code>p {
+  color: red;
+  width: 500px;
+  border: 1px solid black;
+}</code></pre>
+    <p> You can also select multiple elements and apply a single ruleset to all of them. Separate multiple selectors by commas. For example:
+    </p>
+    <pre><code>p, li, h1 {
+  color: red;
+}</code></pre>
+  </section>
+  <section class="main-section" id="Next_Steps">
+    <header>
+      Next Steps
+    </header>
+    <p>This article covers the basics of CSS. Visit <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" id="footer-link"><b>MDN</b></a> for full documentation, and to learn more about CSS and how it is used to style HTML.
+</main>
+<br />
+<footer>
+  All documentation on this page is from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" id="footer-link"><b>MDN</b></a>. Click to learn more.
+</footer>
+  </body>
+</html>
